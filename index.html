@@ -8,13 +8,25 @@
 
 
   <style>
+    .card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* quando o card estiver visível */
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
       background-color: #000000;
       color: #ffffff;
     }
@@ -180,7 +192,7 @@
 
       <!-- CARD 02 -->
       <div class="card">
-        <img src="./cartazes/largatas.jpg" alt="Cartaz Curta 02">
+        <img src="./cartazes/largatasnovamente.jpg" alt="Cartaz Curta 02">
         <h5>Largartas não falam</h5>
         <h6>EDIFIC1M</h6>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScd1YUyfrvfVcAw0Bk2OahG-yyuKi_y7mQjcLWCS2hzGjWp-A/viewform?usp=pp_url&entry.251979213=Largartas+n%C3%A3o+falam+-+Edific1M" target="_blank" class="vote-btn">VOTAR</a>
@@ -192,6 +204,13 @@
         <h5>As raízes cantam</h5>
         <h6>MAMB1V</h6>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScd1YUyfrvfVcAw0Bk2OahG-yyuKi_y7mQjcLWCS2hzGjWp-A/viewform?usp=pp_url&entry.251979213=As+ra%C3%ADzes+cantam+-+Mamb2V" target="_blank" class="vote-btn">VOTAR</a>
+      </div>
+
+      <div class="card">
+        <img src="./cartazes/entreoolhardehoje.jpg" alt="Cartaz Curta 04">
+        <h5>Entre o olhar de hoje e a lembrança do ontem</h5>
+        <h6>MAMB1M</h6>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScd1YUyfrvfVcAw0Bk2OahG-yyuKi_y7mQjcLWCS2hzGjWp-A/viewform?usp=pp_url&entry.251979213=Entre+o+olhar+de+hoje+e+a+lembran%C3%A7a+do+ontem+-+Mamb1M" target="_blank" class="vote-btn">VOTAR</a>
       </div>
 
       <!-- DUPLIQUE ATÉ O 22 -->
@@ -249,6 +268,25 @@
     container.appendChild(div);
   });
 </script>
+<script>
+  const cards = document.querySelectorAll(".card");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    {
+      threshold: 0.2
+    }
+  );
+
+  cards.forEach(card => observer.observe(card));
+</script>
+
 
 
 
