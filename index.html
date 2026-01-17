@@ -8,6 +8,21 @@
 
 
   <style>
+    .video-container {
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;   /* força proporção horizontal */
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* CORTA as bordas pretas */
+}
+
     .card {
   opacity: 0;
   transform: translateY(30px);
@@ -190,15 +205,6 @@
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScd1YUyfrvfVcAw0Bk2OahG-yyuKi_y7mQjcLWCS2hzGjWp-A/viewform?usp=pp_url&entry.251979213=Mem%C3%B3rias+e+Entrela%C3%A7amentos+-+Mamb1M" target="_blank" class="vote-btn">VOTAR</a>
       </div>
 
-      <!-- CARD 02 -->
-      <div class="card">
-        <img src="./cartazes/largatasnovamente.jpg" alt="Cartaz Curta 02">
-        <h5>Lagartas não falam</h5>
-        <h6>EDIFIC1M</h6>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScd1YUyfrvfVcAw0Bk2OahG-yyuKi_y7mQjcLWCS2hzGjWp-A/viewform?usp=pp_url&entry.251979213=Largartas+n%C3%A3o+falam+-+Edific1M" target="_blank" class="vote-btn">VOTAR</a>
-      </div>
-
-      <!-- CARD 03 -->
       <div class="card">
         <img src="./cartazes/Asraízescantam (1).jpg" alt="Cartaz Curta 03">
         <h5>As raízes cantam</h5>
@@ -211,6 +217,13 @@
         <h5>Entre o olhar de hoje e a lembrança do ontem</h5>
         <h6>MAMB1M</h6>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScd1YUyfrvfVcAw0Bk2OahG-yyuKi_y7mQjcLWCS2hzGjWp-A/viewform?usp=pp_url&entry.251979213=Entre+o+olhar+de+hoje+e+a+lembran%C3%A7a+do+ontem+-+Mamb1M" target="_blank" class="vote-btn">VOTAR</a>
+      </div>
+
+      <div class="card">
+        <img src="./cartazes/largatasnovamente.jpg" alt="Cartaz Curta 02">
+        <h5>Lagartas não falam</h5>
+        <h6>EDIFIC1M</h6>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScd1YUyfrvfVcAw0Bk2OahG-yyuKi_y7mQjcLWCS2hzGjWp-A/viewform?usp=pp_url&entry.251979213=Largartas+n%C3%A3o+falam+-+Edific1M" target="_blank" class="vote-btn">VOTAR</a>
       </div>
 
       <!-- DUPLIQUE ATÉ O 22 -->
@@ -237,11 +250,22 @@
 <div class="videos">
   <h4>Assista aos curtas do MIRADAS</h4>
   <div id="video-list"></div>
+  <div class="video-container">
+    <video 
+      src="./video/video.miradas.mp4"
+      autoplay
+      muted
+      loop
+      playsinline>
+    </video>
+  </div>
 </div>
 
-<script>
+
+<!--<script>
   const videos = [
-    "9No-FiEInLA",
+    "zIILcXere9Y",
+    "6G-8g-F2Fg0",
     // adicione mais IDs aqui
   ];
 
@@ -267,7 +291,7 @@
 
     container.appendChild(div);
   });
-</script>
+</script>-->
 <script>
   const cards = document.querySelectorAll(".card");
 
